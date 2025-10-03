@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.security.suitedepruebas'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    //SELENIUM PARA MANIPULAR EL BROWSER USANDO EL WEBDRIVER VIA CODIGO
+    testImplementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    //WEBDRIVER MANAGER PARA LA GESTIÔN DEL DRIVER
+    testImplementation("io.github.bonigarcia:webdrivermanager:6.2.0")
+    //https://bonigarcia.dev/webdrivermanager/
+}
+
+test {
+    useJUnitPlatform()
+}
