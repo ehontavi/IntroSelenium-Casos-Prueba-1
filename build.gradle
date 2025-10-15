@@ -18,8 +18,15 @@ dependencies {
     //WEBDRIVER MANAGER PARA LA GESTIÔN DEL DRIVER
     testImplementation("io.github.bonigarcia:webdrivermanager:6.2.0")
     //https://bonigarcia.dev/webdrivermanager/
+    //Apache POI
+    testImplementation 'org.apache.poi:poi-ooxml:5.4.0'
 }
 
 test {
     useJUnitPlatform()
+    include '**/Unidad2/tests/**' //ejecuta todos los test
+    //include 'Users/estebanhontavillaantich/IntroSelenium/src/test/java/Unidad2/tests/TestCases'
+
 }
+
+

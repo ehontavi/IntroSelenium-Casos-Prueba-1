@@ -1,4 +1,4 @@
-package EjemploClase1;
+package Unidad1.ejemploSelenium;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;

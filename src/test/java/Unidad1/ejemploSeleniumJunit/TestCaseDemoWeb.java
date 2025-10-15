@@ -1,4 +1,4 @@
-package ejemploSeleniumJunit;
+package Unidad1.ejemploSeleniumJunit;
 
 import com.google.gson.internal.bind.util.ISO8601Utils;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -104,7 +104,7 @@ public class TestCaseDemoWeb {
         driver.findElement(By.name("LastName")).sendKeys("Hontavilla");
 
         //email
-        driver.findElement(By.xpath("//input[@data-val-required='Email is required.']")).sendKeys("ehontavil790@algo.com");
+        driver.findElement(By.xpath("//input[@data-val-required='Email is required.']")).sendKeys("ehontavil1790@algo.com");
 
         //password
         driver.findElement(By.xpath("//input[@id='Password']")).sendKeys("123456");
