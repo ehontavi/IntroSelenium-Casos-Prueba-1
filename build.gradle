@@ -7,26 +7,46 @@ version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    //mavenlocal()
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     //SELENIUM PARA MANIPULAR EL BROWSER USANDO EL WEBDRIVER VIA CODIGO
-    testImplementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.15.0'
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     //WEBDRIVER MANAGER PARA LA GESTIÔN DEL DRIVER
     testImplementation("io.github.bonigarcia:webdrivermanager:6.2.0")
     //https://bonigarcia.dev/webdrivermanager/
+
     //Apache POI
     testImplementation 'org.apache.poi:poi-ooxml:5.4.0'
+
+    testImplementation 'io.cucumber:cucumber-java:7.14.0'
+    testImplementation 'io.cucumber:cucumber-junit-platform-engine:7.14.0'
+    testImplementation 'org.junit.platform:junit-platform-suite:1.10.0'
+
+    //EXTENT REPORTS - SPARK REPORT
+    testImplementation 'tech.grasshopper:extentreports-cucumber7-adapter:1.14.0'
 }
 
 test {
     useJUnitPlatform()
-    include '**/Unidad2/tests/**' //ejecuta todos los test
+    //include '**/Unidad2/tests/**' //ejecuta todos los test
     //include 'Users/estebanhontavillaantich/IntroSelenium/src/test/java/Unidad2/tests/TestCases'
-
+    include '**/runners/**'
+    doLast {
+        println ""
+        println "=========================================="
+        println "✅ Tests completados exitosamente"
+        println "=========================================="
+        println "📊 Reportes generados:"
+        println "   • Extent Spark: target/extent-reports/SparkReport.html"
+        println "   • JSON: target/cucumber-reports/cucumber.json"
+        println "   • HTML: target/cucumber-reports/cucumber.html"
+        println "=========================================="
+    }
 }
 
 

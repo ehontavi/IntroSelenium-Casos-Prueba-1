@@ -1,6 +1,5 @@
-package Unidad2.utils;
+package Unidad3.glue.utils;
 
-import org.junit.platform.commons.function.Try;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,13 +25,15 @@ public class BaseClass {
     public void setDriver(WebDriver driver) {
         this.driver = driver;
     }
-    public BaseClass(WebDriver driver) {
-        this.driver = driver;
+    public BaseClass() {
+        this.driver = DriverManager.getDriver();
+        espera = new WebDriverWait(this.driver, Duration.ofSeconds(10));
     }
+
     //buscar Elemento Web esperando 10 segundos
     public WebElement esperarWebElement(By locator) {
         try {
-            espera = new WebDriverWait(this.driver, Duration.ofSeconds(10));
+
             //return driver.findElement(locator);
             return espera.until(ExpectedConditions.presenceOfElementLocated(locator));
             //obtener el elemento web a retornar
@@ -46,7 +47,7 @@ public class BaseClass {
     //buscar elementos web esperando 20 segundos
     public List <WebElement> esperarWebElements(By locator) {
         try {
-            espera = new WebDriverWait(this.driver, Duration.ofSeconds(20));
+
             //return driver.findElement(locator);
             return espera.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
             //obtener el elemento web a retornar
@@ -86,7 +87,13 @@ public class BaseClass {
         Select ddl = new Select(esperarWebElement(locator));
         ddl.selectByVisibleText(textoVisible);
     }
+    //metodo generico para buscar elemento web
     public boolean validarElementoWeb(By locator){
         return esperarWebElement(locator).isDisplayed();
+    }
+
+    public String obtenerTituloPagina() {
+        return driver.getTitle();
+
     }
 }

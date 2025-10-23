@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <!-- TEMA: standard (claro) o dark (oscuro) -->
+        <theme>dark</theme>
+
+        <!-- Codificación de caracteres -->
+        <encoding>UTF-8</encoding>
+
+        <!-- Título que aparece en la pestaña del navegador -->
+        <documentTitle>Reporte de Automatización - Cucumber + Selenium</documentTitle>
+
+        <!-- Nombre principal del reporte -->
+        <reportName>🚀 Test Automation Execution Report</reportName>
+
+        <!-- Formato de fecha y hora -->
+        <timeStampFormat>dd/MM/yyyy HH:mm:ss</timeStampFormat>
+
+        <!-- JavaScript personalizado (opcional) -->
+        <scripts>
+            <![CDATA[
+                $(document).ready(function() {
+                    console.log('✅ Extent Spark Report cargado correctamente');
+
+                    // Puedes agregar scripts personalizados aquí
+                    // Por ejemplo: analytics, interacciones personalizadas, etc.
+                });
+            ]]>
+        </scripts>
+
+        <!-- CSS personalizado (opcional) -->
+        <styles>
+            <![CDATA[
+                /* Estilos personalizados para el reporte */
+
+                .test-name {
+                    font-weight: bold;
+                    color: #00bcd4;
+                }
+
+                .category-name {
+                    font-weight: 600;
+                    text-transform: uppercase;
+                }
+
+                /* Personaliza el color del dashboard */
+                .dashboard-card {
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                }
+
+                /* Mejora la legibilidad de los logs */
+                .step-details {
+                    font-size: 14px;
+                    line-height: 1.6;
+                }
+            ]]>
+        </styles>
+    </configuration>
+</extentreports>
