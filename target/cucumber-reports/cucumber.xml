@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="90.796" tests="5" skipped="0" failures="0" errors="0">
+<testcase classname="Inicio de sesion" name="despliegue modal de login" time="18.479">
+<system-out><![CDATA[
+Given el usuario se encuentra en el home....................................passed
+When selecciona link log in.................................................passed
+Then se visualiza modal de inicio de sesion.................................passed
+And caja de texto para el ingreso del mail..................................passed
+And caja de texto para el ingreso del password..............................passed
+And boton iniciar sesion....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Inicio de sesion" name="Error login - Example #1.1" time="18.22">
+<system-out><![CDATA[
+Given el usuario se encuentra en el home....................................passed
+And selecciona link log in..................................................passed
+When se ingresa mail "estantich@gmail.com"..................................passed
+And se ingresa password "123456"............................................passed
+And presiona boton Log in...................................................passed
+Then se visualiza mensaje de error "Login was unsuccessful. Please correct the errors and try again.
+No customer account found".passed
+]]></system-out>
+</testcase>
+<testcase classname="Inicio de sesion" name="Error login - Example #1.2" time="17.881">
+<system-out><![CDATA[
+Given el usuario se encuentra en el home....................................passed
+And selecciona link log in..................................................passed
+When se ingresa mail "domingo.saavedra.111@algo.com"........................passed
+And se ingresa password "123450"............................................passed
+And presiona boton Log in...................................................passed
+Then se visualiza mensaje de error "Login was unsuccessful. Please correct the errors and try again.
+The credentials provided are incorrect".passed
+]]></system-out>
+</testcase>
+<testcase classname="Inicio de sesion" name="login exitoso - Example #1.1" time="18.541">
+<system-out><![CDATA[
+Given el usuario se encuentra en el home....................................passed
+And selecciona link log in..................................................passed
+When se ingresa mail "ehontavil@gmail.com"..................................passed
+And se ingresa password "123456"............................................passed
+And presiona boton Log in...................................................passed
+Then se visualiza el home del sitio.........................................passed
+And se visualiza el usuario logeado "ehontavil@gmail.com"...................passed
+]]></system-out>
+</testcase>
+<testcase classname="Inicio de sesion" name="login exitoso - Example #1.2" time="17.211">
+<system-out><![CDATA[
+Given el usuario se encuentra en el home....................................passed
+And selecciona link log in..................................................passed
+When se ingresa mail "ehontavil@gmail.com"..................................passed
+And se ingresa password "123456"............................................passed
+And presiona boton Log in...................................................passed
+Then se visualiza el home del sitio.........................................passed
+And se visualiza el usuario logeado "ehontavil@gmail.com"...................passed
+]]></system-out>
+</testcase>
+</testsuite>

@@ -65,10 +65,10 @@ public class StepsDefinitions {
     public void se_visualiza_el_home_del_sitio() {
         Assertions.assertEquals("Demo Web Shop",homePage.obtenerTituloPagina());
     }
-    @Then("se visualiza el usuario logeado")
-    public void se_visualiza_el_usuario_logeado() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Then("se visualiza el usuario logeado {string}")
+    public void se_visualiza_el_usuario_logeado(String docString) {
+        Assertions.assertEquals(docString,homePage.obtenerUsuarioLogeado());
+
     }
     @Then("se visualiza mensaje de error {string}")
     public void se_visualiza_mensaje_de_error(String docString) {

@@ -40,8 +40,8 @@ Feature: Inicio de sesion
 		And se ingresa password "<password>"
 		And presiona boton Log in
 		Then se visualiza el home del sitio
-		And se visualiza el usuario logeado
+		And se visualiza el usuario logeado "<logeado>"
 		Examples:
-			| mail | password |
-			|esteb@jemaili.com | Tsoft1234 |
-			|esteb@jemaili.com| Tsoft1234 |
+			| mail | password | logeado |
+			|ehontavil@gmail.com| 123456 | ehontavil@gmail.com |
+			|ehontavil@gmail.com| 123456 | ehontavil@gmail.com |

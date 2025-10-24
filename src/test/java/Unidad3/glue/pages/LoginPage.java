@@ -13,6 +13,8 @@ public class LoginPage extends BaseClass {
 
     By locatorErrorLogin = By.xpath("//div[@class='validation-summary-errors']");
 
+
+
     public LoginPage() {
         super();
     }

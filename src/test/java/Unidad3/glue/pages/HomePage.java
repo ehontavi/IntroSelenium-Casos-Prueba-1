@@ -13,12 +13,10 @@ public class HomePage extends BaseClass {
     By locatorErrorVoteWithoutRegistration = By.xpath("//div[@id='block-poll-vote-error-1']");
     By locatorVoteOK = By.xpath("//span[@class='poll-total-votes']");
 
-    By locatorLoginOk = By.xpath("//div[@class='header-links']");
+    By locatorLoginOk = By.xpath("//a[@class='account']");
 
     By locatorlogin = By.linkText("Log in");
     By locatorErrorLogin = By.xpath("//div[@class='validation-summary-errors']");
-
-
 
     public HomePage() {
         super();
@@ -26,10 +24,12 @@ public class HomePage extends BaseClass {
 
     //Acciones
     public void irARegister() {
+
         click(locatorRegister);
     }
 
     public void VotePollVote() {
+
         click(locatorBtnVote);
     }
 
@@ -39,20 +39,28 @@ public class HomePage extends BaseClass {
     }
 
     public String getErrorVoteWithoutRegistration() {
+
         return obtenerTexto(locatorErrorVoteWithoutRegistration);
     }
 
     public boolean getVoteOK() {
+
         return validarElementoWeb(locatorVoteOK);
     }
 
     public boolean getLoginOK() {
+
         return validarElementoWeb(locatorLoginOk);
     }
     public void irALogin() {
-            click(locatorlogin);
+
+        click(locatorlogin);
     }
     public String getErrorLogin() {
+
         return obtenerTexto(locatorErrorLogin);
     }
+
+    public String obtenerUsuarioLogeado () {
+        return obtenerTexto(locatorLoginOk);}
 }
